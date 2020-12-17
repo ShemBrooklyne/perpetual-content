@@ -22,3 +22,5 @@ dependencies {
     compile 'org.sql2o:sql2o:1.5.4'
     compile 'com.google.code.gson:gson:2.5'  // to be explained shortly
 }
+
+mainClassName = 'App'
