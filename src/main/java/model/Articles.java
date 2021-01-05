@@ -7,15 +7,15 @@ import java.util.Objects;
 import java.util.logging.SimpleFormatter;
 
 public class Articles {
+    private int id;
     private String headline;
     private String documentation;
-    private Blob imageurl;
+    private String imageurl;
     private String author;
-    private int id;
-    private long createdat;
     private String formattedCreatedAt;
+    private long createdat;
 
-    public  Articles(String headline, String documentation, Blob imageurl, String author) {
+    public  Articles(String headline, String documentation, String imageurl, String author) {
         this.headline = headline;
         this.documentation = documentation;
         this.imageurl= imageurl;
@@ -73,7 +73,7 @@ public class Articles {
         this.author = author;
     }
 
-    public void setImageurl(Blob imageurl) {
+    public void setImageurl(String imageurl) {
         this.imageurl = imageurl;
     }
 
@@ -81,8 +81,8 @@ public class Articles {
         this.id = id;
     }
 
-    public void setCreatedat(long createdat) {
-        this.createdat = System.currentTimeMillis();
+    public void setCreatedat() {
+        this.createdat = System.currentTimeMillis(); // It'll become clear soon why we need this explicit setter
     }
 
     public void setFormattedCreatedAt(){
@@ -91,6 +91,7 @@ public class Articles {
         SimpleDateFormat sdf = new SimpleDateFormat(datePatternToUse);
         this.formattedCreatedAt = sdf.format(date);
     }
+
 
     //Getters
 
@@ -106,14 +107,8 @@ public class Articles {
         return author;
     }
 
-    public String getFormattedCreatedAt() {
-        Date date = new Date(createdat);
-        String datePatternToUse = "MM/dd/yyyy @ K:mm a";
-        SimpleDateFormat sdf = new SimpleDateFormat(datePatternToUse);
-        return sdf.format(date);
-    }
 
-    public Blob getImageurl() {
+    public String getImageurl() {
         return imageurl;
     }
 
@@ -124,6 +119,14 @@ public class Articles {
     public long getCreatedat() {
         return createdat;
     }
+
+    public String getFormattedCreatedAt(){
+        Date date = new Date(createdat);
+        String datePatternToUse = "MM/dd/yyyy @ K:mm a"; //see https://docs.oracle.com/javase/7/docs/api/java/text/SimpleDateFormat.html
+        SimpleDateFormat sdf = new SimpleDateFormat(datePatternToUse);
+        return sdf.format(date);
+    }
+
 
 
 }

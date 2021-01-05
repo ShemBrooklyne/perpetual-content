@@ -27,13 +27,17 @@ public class Sql2oArticlesDao implements ArticlesDao {
         }
     }
 
+
     @Override
     public List<Articles> getAll() {
         try (Connection con = sql2o.open()) {
+            System.out.println(con.createQuery("SELECT * FROM articles")
+                    .executeAndFetch(Articles.class));
             return con.createQuery("SELECT * FROM articles")
                     .executeAndFetch(Articles.class);
         }
     }
+
 
     @Override
     public void deleteById(int id) {

@@ -31,12 +31,12 @@ public class App {
 
         // Welcome screen Json format
         get("/", "application/json", (req, res) ->
-                "{\"Perpertual Motion Squad message\":\"Hello great Farmer! Welcome On-Board in the pursuits of solving world hunger. \n ZERO WORLD HUNGER!!!\"}");
+                "{\"message\":\"Hello there Netizen! WELCOME to NEWS-PORTAL-API mainpage.\"}");
 
         // POST Requests to the sqlDB
 
         // Add data into Articles table
-        post("/articles/new", "application/json", ((request, response) -> {
+        post("articles/new", "application/json", ((request, response) -> {
             Articles articles = gson.fromJson(request.body(), Articles.class);
             ArticlesDao.add(articles);
             response.status(201);

@@ -30,7 +30,9 @@ public class Sql2oTutorialsDao implements TutorialsDao{
     @Override
     public List<Tutorials> getAll() {
         try (Connection con = sql2o.open()) {
-            return con.createQuery("SELECT from * tutorials")
+            System.out.println(con.createQuery("SELECT * FROM tutorials")
+                    .executeAndFetch(Tutorials.class));
+            return con.createQuery("SELECT * FROM tutorials")
                     .executeAndFetch(Tutorials.class);
         }
     }

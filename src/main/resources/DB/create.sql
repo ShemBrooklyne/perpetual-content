@@ -4,7 +4,7 @@ CREATE TABLE IF NOT EXISTS articles (
 id int PRIMARY KEY auto_increment,
 headline VARCHAR,
 documentation VARCHAR,
-iamgeurl BLOB,
+iamgeurl VARCHAR,
 author VARCHAR,
 createdat LONG,
 formattedCreatedAt VARCHAR
@@ -13,7 +13,7 @@ formattedCreatedAt VARCHAR
 CREATE TABLE IF NOT EXISTS tutorials (
 id int PRIMARY KEY auto_increment,
 title VARCHAR,
-videourl BLOB,
+videourl VARCHAR,
 desc VARCHAR,
 source VARCHAR,
 createdat LONG,
