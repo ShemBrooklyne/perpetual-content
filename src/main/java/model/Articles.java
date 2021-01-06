@@ -1,38 +1,36 @@
 package model;
 
-import java.sql.Blob;
 import java.text.SimpleDateFormat;
 import java.util.Date;
 import java.util.Objects;
-import java.util.logging.SimpleFormatter;
 
 public class Articles {
     private int id;
     private String headline;
     private String documentation;
-    private String imageurl;
+    private String imgurl;
     private String author;
-    private String formattedCreatedAt;
     private long createdat;
+    private String formattedCreatedAt;
 
-    public  Articles(String headline, String documentation, String imageurl, String author) {
+    public Articles(String headline, String documentation, String imgurl, String author) {
         this.headline = headline;
         this.documentation = documentation;
-        this.imageurl= imageurl;
+        this.imgurl = imgurl;
         this.author = author;
         this.createdat = System.currentTimeMillis();
         setFormattedCreatedAt();
     }
 
-    //Create comparison
+    // Create comparison
 
 //    @Override
-//    public int compareTo(Articles articlesObject) {
-//        if (this.createdat < articlesObject.createdat)
+//    public int compareTo(Tutorials tutorialsObj) {
+//        if (this.createdat < tutorialsObj.createdat)
 //        {
 //            return -1; //this object was made earlier than the second object.
 //        }
-//        else if (this.createdat > articlesObject.createdat){ //this object was made later than the second object
+//        else if (this.createdat > tutorialsObj.createdat){ //this object was made later than the second object
 //            return 1;
 //        }
 //        else {
@@ -40,60 +38,31 @@ public class Articles {
 //        }
 //    }
 
-    //Hashcode n equals override
+    // Hashcode n equals Override
 
     @Override
-    public boolean equals(Object object) {
+    public boolean equals (Object object) {
         if (this == object) return true;
         if (!(object instanceof Articles)) return false;
         Articles articles = (Articles) object;
         return id == articles.id &&
                 Objects.equals(headline, articles.headline) &&
+                Objects.equals(imgurl, articles.imgurl) &&
                 Objects.equals(documentation, articles.documentation) &&
-                Objects.equals(imageurl, articles.imageurl) &&
                 Objects.equals(author, articles.author);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(headline, documentation, imageurl, author);
+        return Objects.hash(id, headline, documentation, imgurl, author);
     }
-
-    //setters
-
-    public void setHeadline(String headline) {
-        this.headline = headline;
-    }
-
-    public void setDocumentation(String documentation) {
-        this.documentation = documentation;
-    }
-
-    public void setAuthor(String author) {
-        this.author = author;
-    }
-
-    public void setImageurl(String imageurl) {
-        this.imageurl = imageurl;
-    }
-
-    public void setId(int id) {
-        this.id = id;
-    }
-
-    public void setCreatedat() {
-        this.createdat = System.currentTimeMillis(); // It'll become clear soon why we need this explicit setter
-    }
-
-    public void setFormattedCreatedAt(){
-        Date date = new Date(this.createdat);
-        String datePatternToUse = "MM/dd/yyyy @ K:mm a";
-        SimpleDateFormat sdf = new SimpleDateFormat(datePatternToUse);
-        this.formattedCreatedAt = sdf.format(date);
-    }
-
 
     //Getters
+
+
+    public int getId() {
+        return id;
+    }
 
     public String getHeadline() {
         return headline;
@@ -107,13 +76,8 @@ public class Articles {
         return author;
     }
 
-
-    public String getImageurl() {
-        return imageurl;
-    }
-
-    public int getId() {
-        return id;
+    public String getimgurl() {
+        return imgurl;
     }
 
     public long getCreatedat() {
@@ -127,6 +91,40 @@ public class Articles {
         return sdf.format(date);
     }
 
+    //Setters
 
 
+    public void setId(int id) {
+        this.id = id;
+    }
+
+    public void setDocumentation(String documentation) {
+        this.documentation = documentation;
+    }
+
+//    public void setimgurl(String imgurl) {
+//        this.imgurl = imgurl;
+//    }
+
+    public void setHeadline(String headline) {
+        this.headline = headline;
+    }
+
+    public void setAuthor(String author) {
+        this.author = author;
+    }
+
+
+    public void setCreatedat() {
+        this.createdat = System.currentTimeMillis(); // It'll become clear soon why we need this explicit setter
+    }
+
+    public void setFormattedCreatedAt(){
+        Date date = new Date(this.createdat);
+        String datePatternToUse = "MM/dd/yyyy @ K:mm a";
+        SimpleDateFormat sdf = new SimpleDateFormat(datePatternToUse);
+        this.formattedCreatedAt = sdf.format(date);
+    }
 }
+
+//

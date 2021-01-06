@@ -4,7 +4,7 @@ CREATE TABLE IF NOT EXISTS articles (
 id int PRIMARY KEY auto_increment,
 headline VARCHAR,
 documentation VARCHAR,
-iamgeurl VARCHAR,
+imgurl VARCHAR,
 author VARCHAR,
 createdat LONG,
 formattedCreatedAt VARCHAR

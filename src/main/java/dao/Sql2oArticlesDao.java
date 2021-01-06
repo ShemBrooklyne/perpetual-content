@@ -15,7 +15,7 @@ public class Sql2oArticlesDao implements ArticlesDao {
     }
     @Override
     public void add(Articles articles) {
-        String sql = "INSERT INTO articles (headline, documentation, imageurl, author, createdat, formattedCreatedAt) VALUES (:headline, :documentation, :imageurl, :author, :createdat, :formattedCreatedAt)"; //if you change your model, be sure to update here as well!
+        String sql = "INSERT INTO articles (headline, documentation, imgurl, author, createdat, formattedCreatedAt) VALUES (:headline, :documentation, :imgurl, :author, :createdat, :formattedCreatedAt)"; //if you change your model, be sure to update here as well!
         try (Connection con = sql2o.open()) {
             int id = (int) con.createQuery(sql, true)
                     .bind(articles)
@@ -39,17 +39,6 @@ public class Sql2oArticlesDao implements ArticlesDao {
     }
 
 
-    @Override
-    public void deleteById(int id) {
-        String sql = "DELETE from articles WHERE id = :id";
-        try (Connection con = sql2o.open()) {
-            con.createQuery(sql)
-                    .addParameter("id", id)
-                    .executeUpdate();
-        } catch (Sql2oException ex) {
-            System.out.println(ex);
-        }
-    }
 
     @Override
     public void clearAll() {
