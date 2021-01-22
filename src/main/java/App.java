@@ -14,19 +14,38 @@ import static spark.Spark.*;
 import static spark.Spark.after;
 
 public class App {
+    static int getHerokuAssignedPort() {
+        ProcessBuilder processBuilder = new ProcessBuilder();
+        if (processBuilder.environment().get("PORT") != null) {
+            return Integer.parseInt(processBuilder.environment().get("PORT"));
+        }
+        return 4567; //return default port if heroku-port isn't set (i.e. on localhost)
+    }
 
     public static void main(String[] args) {
+
+
+        port(getHerokuAssignedPort());
+        staticFileLocation("/public");
+
+
         Sql2oArticlesDao ArticlesDao;
         Sql2oTutorialsDao TutorialsDao;
         Connection conn;
         Gson gson = new Gson();
 
+
         //Initializing h2 database. For test env
 //        String connectionString = "jdbc:h2:~/perpetual-content.db;INIT=RUNSCRIPT from 'classpath:DB/create.sql'";
 //        Sql2o sql2o = new Sql2o(connectionString, "", "");
 
-        String connectionString = "jdbc:postgresql://localhost:5432/perpetual_content"; //connect to newsportal, not newsportal_test!
-        Sql2o sql2o = new Sql2o(connectionString, "access", "Access");  //Ubuntu Sql2o sql2o = new Sql2o(connectionString, "user", "1234");
+        //Initializing postgreSQL database. For production env
+//        String connectionString = "jdbc:postgresql://localhost:5432/perpetual_content"; //connect to newsportal, not newsportal_test!
+//        Sql2o sql2o = new Sql2o(connectionString, "access", "Access");  //Ubuntu Sql2o sql2o = new Sql2o(connectionString, "user", "1234");
+
+        //Deployed database
+        String connectionString = "jdbc:postgresql://ec2-54-236-146-234.compute-1.amazonaws.com:5432/d5fi86916f9edp"; //!
+        Sql2o sql2o = new Sql2o(connectionString, "gphhqfpkfzorpz", "df1fa768984e0a5c2c29bda4695924a22ae939ab38b346e2c42ad56505d27d65"); //!
 
         ArticlesDao = new Sql2oArticlesDao(sql2o);
         TutorialsDao = new Sql2oTutorialsDao(sql2o);
