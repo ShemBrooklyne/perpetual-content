@@ -1,0 +1,32 @@
+
+The following files have been resolved:
+   com.github.jknack:handlebars-guava-cache:jar:4.0.6:compile
+   com.sparkjava:spark-template-handlebars:jar:2.5.5:compile
+   org.eclipse.jetty.websocket:websocket-server:jar:9.4.4.v20170414:compile
+   org.eclipse.jetty.websocket:websocket-common:jar:9.4.4.v20170414:compile
+   org.slf4j:slf4j-simple:jar:1.7.21:compile
+   org.eclipse.jetty:jetty-util:jar:9.4.4.v20170414:compile
+   org.eclipse.jetty:jetty-client:jar:9.4.4.v20170414:compile
+   org.eclipse.jetty.websocket:websocket-api:jar:9.4.4.v20170414:compile
+   org.eclipse.jetty:jetty-servlet:jar:9.4.4.v20170414:compile
+   com.sparkjava:spark-core:jar:2.6.0:compile
+   com.google.guava:guava:jar:14.0.1:compile
+   org.eclipse.jetty:jetty-io:jar:9.4.4.v20170414:compile
+   org.eclipse.jetty:jetty-webapp:jar:9.4.4.v20170414:compile
+   org.eclipse.jetty.websocket:websocket-servlet:jar:9.4.4.v20170414:compile
+   com.github.jknack:handlebars:jar:4.0.6:compile
+   org.slf4j:slf4j-api:jar:1.7.21:compile
+   javax.servlet:javax.servlet-api:jar:3.1.0:compile
+   org.postgresql:postgresql:jar:42.2.9:compile
+   org.eclipse.jetty:jetty-http:jar:9.4.4.v20170414:compile
+   org.eclipse.jetty:jetty-xml:jar:9.4.4.v20170414:compile
+   org.mozilla:rhino:jar:1.7R4:compile
+   org.sql2o:sql2o:jar:1.5.4:compile
+   org.eclipse.jetty:jetty-server:jar:9.4.4.v20170414:compile
+   com.h2database:h2:jar:1.4.191:compile
+   org.eclipse.jetty.websocket:websocket-client:jar:9.4.4.v20170414:compile
+   org.antlr:antlr4-runtime:jar:4.5.1-1:compile
+   com.google.code.gson:gson:jar:2.5:compile
+   org.eclipse.jetty:jetty-security:jar:9.4.4.v20170414:compile
+   org.apache.commons:commons-lang3:jar:3.1:compile
+
