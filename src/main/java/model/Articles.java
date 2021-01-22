@@ -10,7 +10,7 @@ public class Articles {
     private String documentation;
     private String imgurl;
     private String author;
-    private long createdat;
+    private int createdat;
     private String formattedCreatedAt;
 
     public Articles(String headline, String documentation, String imgurl, String author) {
@@ -18,7 +18,7 @@ public class Articles {
         this.documentation = documentation;
         this.imgurl = imgurl;
         this.author = author;
-        this.createdat = System.currentTimeMillis();
+        this.createdat = (int) System.currentTimeMillis();
         setFormattedCreatedAt();
     }
 
@@ -80,7 +80,7 @@ public class Articles {
         return imgurl;
     }
 
-    public long getCreatedat() {
+    public int getCreatedat() {
         return createdat;
     }
 
@@ -116,7 +116,7 @@ public class Articles {
 
 
     public void setCreatedat() {
-        this.createdat = System.currentTimeMillis(); // It'll become clear soon why we need this explicit setter
+        this.createdat = (int) System.currentTimeMillis(); // It'll become clear soon why we need this explicit setter
     }
 
     public void setFormattedCreatedAt(){

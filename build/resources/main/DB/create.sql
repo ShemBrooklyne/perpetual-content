@@ -6,7 +6,7 @@ headline VARCHAR,
 documentation VARCHAR,
 imgurl VARCHAR,
 author VARCHAR,
-createdat LONG,
+createdat INTEGER,
 formattedCreatedAt VARCHAR
 );
 

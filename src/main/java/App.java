@@ -22,8 +22,11 @@ public class App {
         Gson gson = new Gson();
 
         //Initializing h2 database. For test env
-        String connectionString = "jdbc:h2:~/perpetual-content.db;INIT=RUNSCRIPT from 'classpath:DB/create.sql'";
-        Sql2o sql2o = new Sql2o(connectionString, "", "");
+//        String connectionString = "jdbc:h2:~/perpetual-content.db;INIT=RUNSCRIPT from 'classpath:DB/create.sql'";
+//        Sql2o sql2o = new Sql2o(connectionString, "", "");
+
+        String connectionString = "jdbc:postgresql://localhost:5432/perpetual_content"; //connect to newsportal, not newsportal_test!
+        Sql2o sql2o = new Sql2o(connectionString, "access", "Access");  //Ubuntu Sql2o sql2o = new Sql2o(connectionString, "user", "1234");
 
         ArticlesDao = new Sql2oArticlesDao(sql2o);
         TutorialsDao = new Sql2oTutorialsDao(sql2o);
