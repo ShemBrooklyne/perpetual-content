@@ -34,7 +34,7 @@ public class App {
 
         // Welcome screen Json format
         get("/", "application/json", (req, res) ->
-                "{\"message\":\"Hello there Netizen! WELCOME to NEWS-PORTAL-API mainpage.\"}");
+                "{\"message\":\"Hello there, please see perpetual-content documentation to have correct routes on the perpetual API.\"}");
 
         // POST Requests to the sqlDB
 
