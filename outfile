@@ -1,0 +1,125 @@
+--
+-- PostgreSQL database dump
+--
+
+-- Dumped from database version 12.5 (Ubuntu 12.5-0ubuntu0.20.04.1)
+-- Dumped by pg_dump version 12.5 (Ubuntu 12.5-0ubuntu0.20.04.1)
+
+SET statement_timeout = 0;
+SET lock_timeout = 0;
+SET idle_in_transaction_session_timeout = 0;
+SET client_encoding = 'UTF8';
+SET standard_conforming_strings = on;
+SELECT pg_catalog.set_config('search_path', '', false);
+SET check_function_bodies = false;
+SET xmloption = content;
+SET client_min_messages = warning;
+SET row_security = off;
+
+SET default_tablespace = '';
+
+SET default_table_access_method = heap;
+
+--
+-- Name: articles; Type: TABLE; Schema: public; Owner: access
+--
+
+CREATE TABLE public.articles (
+    id integer NOT NULL,
+    headline character varying,
+    documentation character varying,
+    imgurl character varying,
+    author character varying,
+    createdat integer,
+    formattedcreatedat character varying
+);
+
+
+ALTER TABLE public.articles OWNER TO access;
+
+--
+-- Name: articles_id_seq; Type: SEQUENCE; Schema: public; Owner: access
+--
+
+CREATE SEQUENCE public.articles_id_seq
+    AS integer
+    START WITH 1
+    INCREMENT BY 1
+    NO MINVALUE
+    NO MAXVALUE
+    CACHE 1;
+
+
+ALTER TABLE public.articles_id_seq OWNER TO access;
+
+--
+-- Name: articles_id_seq; Type: SEQUENCE OWNED BY; Schema: public; Owner: access
+--
+
+ALTER SEQUENCE public.articles_id_seq OWNED BY public.articles.id;
+
+
+--
+-- Name: articles id; Type: DEFAULT; Schema: public; Owner: access
+--
+
+ALTER TABLE ONLY public.articles ALTER COLUMN id SET DEFAULT nextval('public.articles_id_seq'::regclass);
+
+
+--
+-- Data for Name: articles; Type: TABLE DATA; Schema: public; Owner: access
+--
+
+COPY public.articles (id, headline, documentation, imgurl, author, createdat, formattedcreatedat) FROM stdin;
+1	The Aquaponics System	Aquaponics is a cooperation between plants and fish, and the term originates from the two words aquaculture (the growing of fish in a closed environment) and hydroponics (the growing of plants usually in a soil-less environment). Aquaponic systems come in various sizes from small indoor units to large commercial units, and they can be either freshwater systems or contain salt or brackish water. When you use an aquaponics system at home, you are bound to increase your food production significantly because you can plant more vegetables using very little space. Therefore, you're able to sell surplus production of vegetables and fish to earn extra income, granted that you have the necessary resources for it.	https://www.grozine.com/wp-content/uploads/2018/08/aquaponics-system-grow-bed-media-1024x1024.jpg	Perpetual Motion Squad	-691875517	12/24/1969 @ 2:48 AM
+2	Build an Aquaponic System With Guides right in your phone.	An energy efficient pump. One pump is needed to move water from the fish tank to the grow bed. Water then can be returned to the fish through the tubing by gravity flow.	https://permies.com/t/12615/a/3570/thumb-Windmill-aquaponics-v2.JPG	Perpetual Motion Squad	-691875517	12/24/1969 @ 2:48 AM
+3		A tank for your fish and a grow bed medium with hydroponic components.Gravel: 2.5 lbs. of gravel for every 5 gallons of water in the fish tank .The gravel serves as a home to the nitrifying bacteria that convert ammonia to nitrite and then to nitrate, which can be used by the plants. Most pet stores carry natural or colored aquarium gravel. The individual pebbles are about 1/8” in size. Be sure to wash the gravel thoroughly before using it because it is often dusty. Unwashed gravel will cloud your tank water.	https://www.wikihow.com/images/thumb/b/be/Prepare-Fish-Tank-Gravel-Step-1-Version-2.jpg/v4-460px-Prepare-Fish-Tank-Gravel-Step-1-Version-2.jpg.webp	Perpetual Motion Squad	-691875517	12/24/1969 @ 2:48 AM
+4		An aquatic water heater controlled by a thermostat to maintain water temperature in the system. Depending on the fish and plants you're cultivating, you'll want to maintain a temperature of between 70 and 86 degrees Fahrenheit (21 and 30 degrees Celsius).	https://i.pinimg.com/originals/2a/cb/9a/2acb9a811fcb5c03267935fbef4e4c4c.jpg	Perpetual Motion Squad	-691875517	12/24/1969 @ 2:48 AM
+5		Greenhouse Accessories and efficient water.	https://agricultureworld.org/soft/products/1439981439.jpg	Perpetual Motion Squad	-691875517	12/24/1969 @ 2:48 AM
+6		Clay or gravel for growing beds(Growing medium). While the bottom of the plants' roots hang in the water, the plants themselves rest in a clay or gravel grow bed medium that helps to filter the water. These materials offer plant support, produce high plant growth yield, offer optimal water buffering and act as a biofilter also, holds the plant roots and maintains moisture.	https://i.ytimg.com/vi/EwAeULxEdX0/maxresdefault.jpg	Perpetual Motion Squad	-691875517	12/24/1969 @ 2:48 AM
+7		Liquid seaweed to be added as a foliar spray to give your plants a boost.	https://www.gatesgardencentre.co.uk/wp-content/uploads/5SW500.jpg	Perpetual Motion Squad	-691875517	12/24/1969 @ 2:48 AM
+8		Test kits to check the pH of water in the system. The optimal pH level in a system is 6.7 to 6.9.	https://www.theaquaponicsource.com/wp-content/uploads/2013/12/API-ph-test-kit-1-11916-aquaponics-fish-care-water-treatment.jpg	Perpetual Motion Squad	-691875517	12/24/1969 @ 2:48 AM
+9		Labor to maintain the whole process for setting up the system.		Perpetual Motion Squad	-691875517	12/24/1969 @ 2:48 AM
+10	Step BY Step Setup	Thoroughly wash the gravel and place in the bottom of the fish tank.	https://www.wikihow.com/images/thumb/4/43/Prepare-Fish-Tank-Gravel-Step-3-Version-2.jpg/v4-460px-Prepare-Fish-Tank-Gravel-Step-3-Version-2.jpg.webp	Perpetual Motion Squad	-691875517	12/24/1969 @ 2:48 AM
+11	Step BY Step Setup	Drill 1/8” or 3/16” holes in the bottom of the grow bed every 2 square inches so the water can drain into the tank. In one of the back corners of the grow bed, drill a 1/2” hole for the tubing from the water pump to pass through.(Drilling is according to your pvc pipes and the farm bigness)	https://i.stack.imgur.com/VOtay.png	Perpetual Motion Squad	-691875517	12/24/1969 @ 2:48 AM
+12		Place the water pump in the fish tank then set the grow bed on top of the tank. Feed the tubing from the water pump through the 1/2” hole. Leave enough tubing to extend about 3/4 the height of the grow bed and to loop around the inside of the grow bed. Cut off any excess tube and fold the end over. Seal the folded piece with electrical tape.	https://puregoldfish.com/wp-content/uploads/2019/06/diyaquaponicfishtankfilter.jpg	Perpetual Motion Squad	-691875517	12/24/1969 @ 2:48 AM
+13		Fill the fish tank with water. Plug in the pump to ensure that the water is pumped into the grow bed, trickles down through the growing medium and continuously back into the tank. Depending on the size of your tank, grow bed and pump, you may have to adjust the flow.	https://images.squarespace-cdn.com/content/v1/5875ac5344024353e512c5c9/1495851222548-Z27PGHB6Z5TFRPZH5B2Q/ke17ZwdGBToddI8pDm48kIAxOFyGQR3Lx89o4DH4kswUqsxRUqqbr1mOJYKfIPR7LoDQ9mXPOjoJoqy81S2I8N_N4V1vUb5AoIIIbLZhVYxCRW4BPu10St3TBAUQYVKccVw9oYjzdNAKyl2nw8EiYA_-bZsoRUccscCSfUNpRoZj40r_Ofp3h0Jx3uVLEzNf/2012+10+25+Rimless+75G+set+up-47.jpg	Perpetual Motion Squad	-691875517	12/24/1969 @ 2:48 AM
+14		Connect your air pump to the air stone with the air tubing. Place the air stone in the tank and plug in the air pump. A steady stream of bubbles should rise through the water, providing fresh air.	https://cdn.shopify.com/s/files/1/0311/3149/files/How_to_connect_an_air_pump.jpg?v=1565123176	Perpetual Motion Squad	-691875517	12/24/1969 @ 2:48 AM
+15		Check the pH of your water using litmus paper or a pH meter, a pH test kit or pH meter. Limtmus paper and inexpensive pH test kits are available in most hardware pool supply stores. The ideal pH is 7.0 for an aquaponic system. If it is higher than 7.2 you should lower it with a “pH down” product and if it is lower than 6.8 you should raise it with a “pH up” product, both of which are available from aquarium stores.	https://www.jericobd.com/483/5-in-1-phtdsecsalinitytemperature-digital-water-quality-monitor-tester.jpg	Perpetual Motion Squad	-691875517	12/24/1969 @ 2:48 AM
+16		Allow the unit to sit for 24 hours to be sure all chlorine has dissipated from the water. If you want to stock your fish right away, you’ll need to add a chlorine remover, which is available from aquarium shops and pet stores.N/B: Its recommended to leave it for 24hrs.		Perpetual Motion Squad	-691875517	12/24/1969 @ 2:48 AM
+17		Add your fish to the fish tank. Initially, you should lightly stock your tank with no more than 1/2” of fish per gallon of water. Once your system has been established for over a month you can increase fish density to 1” per gallon of water.	https://www.wikihow.com/images/thumb/3/3e/Build-a-Freshwater-Predator-Fish-Aquarium-Step-13-Version-2.jpg/v4-460px-Build-a-Freshwater-Predator-Fish-Aquarium-Step-13-Version-2.jpg.webp	Perpetual Motion Squad	-691875517	12/24/1969 @ 2:48 AM
+18		Wait approximately 4 weeks to add plants to your system, but if you are eager to plant it, add just a few plants or seeds and increase plant density in a month or so when your system is well established.		Perpetual Motion Squad	-691875517	12/24/1969 @ 2:48 AM
+19	TIPS FOR PLANTING	You can grow just about any plant in your aquaponic system, from leafy greens such as lettuce and spinach, to root crops such as carrots and fruiting plants such as tomatoes and strawberries. You can also grow flowers and herbs, or ornamentals such as ferns and palms. Plants can be grown from seeds or seedlings.		Perpetual Motion Squad	-691875517	12/24/1969 @ 2:48 AM
+20	Planting Into a New Growbed	When deciding on what vegetables to grow, it is important to plant seasonal varieties that thrive in the current climate. A struggling out of season plant will provide no benefit to the system.		Perpetual Motion Squad	-691875517	12/24/1969 @ 2:48 AM
+21	Preparing The Seedlings	Submerge the seedlings in a bucket of water mixed with 4 capfuls of liquid seaweed.		Perpetual Motion Squad	-691875517	12/24/1969 @ 2:48 AM
+22		Give the seedling a good wash in this solution and wash away any soil from the roots		Perpetual Motion Squad	-691875517	12/24/1969 @ 2:48 AM
+23		You don’t have to strictly wash away all the soil from the roots of the plants. If the soil washes away easily, great! If the roots are holding onto the soil just give the roots a quick massage and see what drops away. It is better to plant a seedling with roots full of soil rather than pick its roots apart trying to remove soil.		Perpetual Motion Squad	-691875517	12/24/1969 @ 2:48 AM
+24	Planting the Seedlings	Support the roots and stem of the plant in one hand while making a hole in the expanded clay with the other.		Perpetual Motion Squad	-691875517	12/24/1969 @ 2:48 AM
+25		Push the seedling into the clay to a depth of about 5cm and cover the roots, be careful not to smother the plant with clay pebbles.		Perpetual Motion Squad	-691875517	12/24/1969 @ 2:48 AM
+26		Liquid seaweed (or worm wiz) can continue to be added as a foliar spray to give your plants a boost. Dilute 2 or 3 capfuls in a 9 litre watering can and apply weekly if your plants look like they need it. Once the plants look established limit liquid seaweed application to once every 6 weeks.		Perpetual Motion Squad	-691875517	12/24/1969 @ 2:48 AM
+27	Quick Mind Keeping Instructions	Structure your plantings so that you always have at least half of the growbed growing plants.		Perpetual Motion Squad	-691875517	12/24/1969 @ 2:48 AM
+28		Plant fast growers such as beans and cucumbers first.		Perpetual Motion Squad	-691875517	12/24/1969 @ 2:48 AM
+29		When the fast growers have expired, replace them with slow growers and when the slow growers have expired replace them with fast growers and vice versa.		Perpetual Motion Squad	-691875517	12/24/1969 @ 2:48 AM
+30		By keeping half the bed planted you ensure you always have plants taking nutrients from the water. Plants in their growing phase are the most benefit to your fish farm system as in the growing stage plants are at their most hungry for nutrients.		Perpetual Motion Squad	-691875517	12/24/1969 @ 2:48 AM
+\.
+
+
+--
+-- Name: articles_id_seq; Type: SEQUENCE SET; Schema: public; Owner: access
+--
+
+SELECT pg_catalog.setval('public.articles_id_seq', 30, true);
+
+
+--
+-- Name: articles articles_pkey; Type: CONSTRAINT; Schema: public; Owner: access
+--
+
+ALTER TABLE ONLY public.articles
+    ADD CONSTRAINT articles_pkey PRIMARY KEY (id);
+
+
+--
+-- PostgreSQL database dump complete
+--
+
